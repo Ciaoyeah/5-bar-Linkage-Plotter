@@ -105,3 +105,49 @@
 </ul>
 </li>
 </ol>
+<h1>Python</h1>
+<p data-path-to-node="4">在現代工程與科學研究中，Python 已成為最受歡迎的程式語言。其簡潔的語法與強大的社群支援，讓開發者能將精力集中在「解決問題」，而非繁瑣的底層編碼。</p>
+<h4 data-path-to-node="5">為什麼選擇 Python？</h4>
+<ul data-path-to-node="6">
+<li>
+<p data-path-to-node="6,0,0">易讀性高： 語法接近自然語言，易於維護與傳承研究程式碼。</p>
+</li>
+<li>
+<p data-path-to-node="6,1,0">生態系完整： 從網頁開發 (Vue/Flask) 到硬體控制 (Webots/Python API)，無所不包。</p>
+</li>
+<li>
+<p data-path-to-node="6,2,0">AI 與自動化的首選： 幾乎所有主流的機器學習框架（如 TensorFlow, PyTorch）都以 Python 為主要接口。</p>
+</li>
+</ul>
+<p>以下為此模擬的python組件介紹</p>
+<h4 data-path-to-node="8">1. <a href="https://pypi.org/project/numpy/">NumPy</a>：數值計算的核心核心</h4>
+<p data-path-to-node="9">NumPy (Numerical Python) 是 Python 科學計算的基礎。它提供了高效的「多維陣列」物件（ndarray），讓複雜的矩陣運算變得既簡單又快速。</p>
+<h4 data-path-to-node="10">NumPy 的核心優勢</h4>
+<ul data-path-to-node="11">
+<li>
+<p data-path-to-node="11,0,0">高效陣列運算： 相比 Python 內建的 List，NumPy 在處理大規模數據（如機械手臂運動軌跡、感測器數值）時速度快上數倍。</p>
+</li>
+<li>
+<p data-path-to-node="11,1,0">線性代數支持： 內建矩陣乘法、轉置、逆矩陣等運算，是研究 機器人逆向動力學 (Inverse Kinematics) 的必備工具。</p>
+</li>
+<li>
+<p data-path-to-node="11,2,0">廣播機制 (Broadcasting)： 允許不同形狀的陣列進行算術運算，極大簡化了程式碼量。</p>
+</li>
+</ul>
+<p>此次用於五連桿逆運動學的計算</p>
+<p></p>
+<h4 data-path-to-node="13">2. <a href="https://pypi.org/project/opencv-python/">OpenCV</a>：賦予機器人視覺能力</h4>
+<p data-path-to-node="14">OpenCV (Open Source Computer Vision Library) 是一個開源的電腦視覺庫。它能處理從影像讀取、處理到高級物體偵測的所有任務。</p>
+<h4 data-path-to-node="15">在工程研究中的應用</h4>
+<ul data-path-to-node="16">
+<li>
+<p data-path-to-node="16,0,0">影像預處理： 濾波、邊緣檢測（Canny）、二值化，用於分析加工後的工件表面。</p>
+</li>
+<li>
+<p data-path-to-node="16,1,0">座標轉換： 將攝影機拍攝到的 2D 影像座標，轉換為機器人能理解的 3D 空間路徑。</p>
+</li>
+<li>
+<p data-path-to-node="16,2,0">即時追蹤： 在「五連桿繪圖機器人」專案中，可用於追蹤目標輪廓並生成繪圖路徑。</p>
+</li>
+</ul>
+<p>此次用於讀取圖片轉化成路徑</p>

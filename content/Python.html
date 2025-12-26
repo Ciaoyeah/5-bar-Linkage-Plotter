@@ -142,100 +142,52 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">首頁 << <a href='首頁.html'>Previous</a> <a href='Python.html'>Next</a> >> Python<br /><h1>Webots</h1>
-<h4 data-path-to-node="4">1. 什麼是 Webots？</h4>
-<p data-path-to-node="5">Webots 是由 Cyberbotics 公司開發，並於 2018 年正式開源的機器人模擬器。它支援多種作業系統（Windows, Linux, macOS），廣泛應用於工業機器人、自動駕駛、無人機以及多 agent 系統的開發與教學。</p>
-<p data-path-to-node="6">其核心優勢在於能夠提供精確的物理運算與擬真的視覺傳饋，讓使用者在將演算法部署到實體硬體前，先在虛擬環境中完成驗證。</p>
-<h4 data-path-to-node="8">2. 核心技術特點</h4>
-<ul data-path-to-node="9">
+    <div id="tipue_search_content">Webots << <a href='Webots.html'>Previous</a> <br /><h1>Python</h1>
+<p data-path-to-node="4">在現代工程與科學研究中，Python 已成為最受歡迎的程式語言。其簡潔的語法與強大的社群支援，讓開發者能將精力集中在「解決問題」，而非繁瑣的底層編碼。</p>
+<h4 data-path-to-node="5">為什麼選擇 Python？</h4>
+<ul data-path-to-node="6">
 <li>
-<p data-path-to-node="9,0,0">強大的物理引擎 (ODE)： 採用 Open Dynamics Engine (ODE)，能夠精確模擬剛體動力學、碰撞檢測與摩擦力，非常適合測試如機械手臂的運動軌跡與受力分析。</p>
+<p data-path-to-node="6,0,0">易讀性高： 語法接近自然語言，易於維護與傳承研究程式碼。</p>
 </li>
 <li>
-<p data-path-to-node="9,1,0">豐富的感知系統： 內建多種感測器模型，包括：</p>
-<ul data-path-to-node="9,1,1">
-<li>
-<p data-path-to-node="9,1,1,0,0">雷達 (Lidar)、相機 (Camera)、超音波、GPS。</p>
+<p data-path-to-node="6,1,0">生態系完整： 從網頁開發 (Vue/Flask) 到硬體控制 (Webots/Python API)，無所不包。</p>
 </li>
 <li>
-<p data-path-to-node="9,1,1,1,0">力感測器 (Force Sensors)、慣性測量單元 (IMU)。</p>
+<p data-path-to-node="6,2,0">AI 與自動化的首選： 幾乎所有主流的機器學習框架（如 TensorFlow, PyTorch）都以 Python 為主要接口。</p>
 </li>
 </ul>
+<p>以下為此模擬的python組件介紹</p>
+<h4 data-path-to-node="8">1. <a href="https://pypi.org/project/numpy/">NumPy</a>：數值計算的核心核心</h4>
+<p data-path-to-node="9">NumPy (Numerical Python) 是 Python 科學計算的基礎。它提供了高效的「多維陣列」物件（ndarray），讓複雜的矩陣運算變得既簡單又快速。</p>
+<h4 data-path-to-node="10">NumPy 的核心優勢</h4>
+<ul data-path-to-node="11">
+<li>
+<p data-path-to-node="11,0,0">高效陣列運算： 相比 Python 內建的 List，NumPy 在處理大規模數據（如機械手臂運動軌跡、感測器數值）時速度快上數倍。</p>
 </li>
 <li>
-<p data-path-to-node="9,2,0">跨語言開發環境： 支援 Python、C/C++、Java、MATLAB 及 ROS/ROS2。對於偏好 AI 與 OpenCV 整合開發的使用者，Python API 提供了極佳的靈活性。</p>
+<p data-path-to-node="11,1,0">線性代數支持： 內建矩陣乘法、轉置、逆矩陣等運算，是研究 機器人逆向動力學 (Inverse Kinematics) 的必備工具。</p>
 </li>
 <li>
-<p data-path-to-node="9,3,0">高相容性 CAD 導入： 支援從 Fusion 360、SolidWorks 導入 URDF 或 PROTO 模型，方便將自行設計的機械零件直接轉化為模擬物件。</p>
+<p data-path-to-node="11,2,0">廣播機制 (Broadcasting)： 允許不同形狀的陣列進行算術運算，極大簡化了程式碼量。</p>
 </li>
 </ul>
+<p>此次用於五連桿逆運動學的計算</p>
 <p></p>
-<p>模型的匯入與建立參考此B站的教學</p>
-<p><iframe allowfullscreen="allowfullscreen" border="0" frameborder="no" framespacing="0" height="400" scrolling="no" src="//player.bilibili.com/player.html?isOutside=true&amp;aid=300047753&amp;bvid=BV1fF411F7D9&amp;cid=748321049&amp;p=1" width="800"></iframe></p>
-<p></p>
-<h4 data-path-to-node="2">Webots 核心組件解析：Solid 與 HingeJoint</h4>
-<p data-path-to-node="3">在 Webots 的世界中，建構一個機器人就像是在搭樂高。要讓機器人能看、能動、能受重力影響，必須深入理解 Solid 與 Joint 節點的運作邏輯。</p>
-<h4 data-path-to-node="5">1. Solid 節點：賦予物體物理靈魂</h4>
-<p data-path-to-node="6"><code data-index-in-node="0" data-path-to-node="6">Solid</code> 是 Webots 中所有具備「物理屬性」物件的基石。如果你希望一個零件擁有質量、會碰撞、或能被感測器偵測，它必須是一個 Solid。</p>
-<h4 data-path-to-node="7">關鍵欄位解析</h4>
-<ul data-path-to-node="8">
+<h4 data-path-to-node="13">2. <a href="https://pypi.org/project/opencv-python/">OpenCV</a>：賦予機器人視覺能力</h4>
+<p data-path-to-node="14">OpenCV (Open Source Computer Vision Library) 是一個開源的電腦視覺庫。它能處理從影像讀取、處理到高級物體偵測的所有任務。</p>
+<h4 data-path-to-node="15">在工程研究中的應用</h4>
+<ul data-path-to-node="16">
 <li>
-<p data-path-to-node="8,0,0">Translation / Rotation：定義物件在 3D 空間中的初始位置與姿態。</p>
+<p data-path-to-node="16,0,0">影像預處理： 濾波、邊緣檢測（Canny）、二值化，用於分析加工後的工件表面。</p>
 </li>
 <li>
-<p data-path-to-node="8,1,0">Children (子節點)：通常包含 Shape（視覺外觀），定義物件看起來長什麼樣子。</p>
+<p data-path-to-node="16,1,0">座標轉換： 將攝影機拍攝到的 2D 影像座標，轉換為機器人能理解的 3D 空間路徑。</p>
 </li>
 <li>
-<p data-path-to-node="8,2,0">BoundingObject (碰撞邊界)：這決定了物件的「實體形狀」。若未設定，物件會像幽靈一樣穿過地面或其他零件。通常使用簡單幾何體（如 Box 或 Cylinder）來優化運算速度。</p>
-</li>
-<li>
-<p data-path-to-node="8,3,0">Physics (物理屬性)：這是最關鍵的一環。</p>
-<ul data-path-to-node="8,3,1">
-<li>
-<p data-path-to-node="8,3,1,0,0">若此欄位為空，物件將固定在空中（如桌子、地板）。</p>
-</li>
-<li>
-<p data-path-to-node="8,3,1,1,0">若賦予 <code data-index-in-node="4" data-path-to-node="8,3,1,1,0">Physics</code> 節點，則可設定 質量 (Mass)、中心點 (Center of Mass) 與 慣性張量，使物件受到重力與外力影響。</p>
+<p data-path-to-node="16,2,0">即時追蹤： 在「五連桿繪圖機器人」專案中，可用於追蹤目標輪廓並生成繪圖路徑。</p>
 </li>
 </ul>
-</li>
-</ul>
-<h4 data-path-to-node="10">2. HingeJoint 節點：實現旋轉自由度</h4>
-<p data-path-to-node="11"><code data-index-in-node="0" data-path-to-node="11">HingeJoint</code>（旋轉關節）提供了一個自由度（1-DOF），模擬像門鉸鏈或機械手臂關節的旋轉運動。它定義了兩個 <code data-index-in-node="58" data-path-to-node="11">Solid</code> 之間的相對運動關係。</p>
-<h4 data-path-to-node="12">HingeJoint 的三大組成部分</h4>
-<ol data-path-to-node="13" start="1">
-<li>
-<p data-path-to-node="13,0,0">jointParameters (關節參數)：</p>
-<ul data-path-to-node="13,0,1">
-<li>
-<p data-path-to-node="13,0,1,0,0">Anchor (錨點)：定義旋轉中心的座標（例如手臂關節的中心）。</p>
-</li>
-<li>
-<p data-path-to-node="13,0,1,1,0">Axis (軸線)：定義繞著哪個向量旋轉（例如 <span class="math-inline" data-index-in-node="24" data-math="z">$z$</span> 軸 <span class="math-inline" data-index-in-node="28" data-math="[0, 0, 1]">$[0, 0, 1]$</span>）。</p>
-</li>
-<li>
-<p data-path-to-node="13,0,1,2,0">Damping Constant (阻尼係數)：模擬物理摩擦力，防止關節過度晃動。</p>
-</li>
-</ul>
-</li>
-<li>
-<p data-path-to-node="13,1,0">device (設備層)：</p>
-<ul data-path-to-node="13,1,1">
-<li>
-<p data-path-to-node="13,1,1,0,0">這裡是你放置 RotationalMotor（馬達）、PositionSensor（位置感測器）或 Brake（煞車）的地方。這讓你可以透過 Python 程式碼控制關節的角度或轉速。</p>
-</li>
-</ul>
-</li>
-<li>
-<p data-path-to-node="13,2,0">endPoint (端點)：</p>
-<ul data-path-to-node="13,2,1">
-<li>
-<p data-path-to-node="13,2,1,0,0">這是「關節另一頭連接的物體」。通常是另一個 <code data-index-in-node="22" data-path-to-node="13,2,1,0,0">Solid</code> 節點。這形成了 Webots 的樹狀結構。</p>
-</li>
-</ul>
-</li>
-</ol>
-<br />首頁 << <a href='首頁.html'>Previous</a> <a href='Python.html'>Next</a> >> Python</div>
+<p>此次用於讀取圖片轉化成路徑</p><br />Webots << <a href='Webots.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
